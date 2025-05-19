@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Resume Builder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Welcome to AI Resume Builder</h1>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data" id="resumeForm">
+        <!-- Hide the actual input -->
+        <input type="file" name="resume" id="resumeInput" accept=".pdf,.doc,.docx" style="display: none;" required>
+        
+        <!-- Custom button and label -->
+        <label for="resumeInput" id="fileLabel" class="custom-file-label">No file choosen</label>
+        <button type="submit">Upload Resume</button>
+    </form>
+
+    <pre id="result"></pre>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
